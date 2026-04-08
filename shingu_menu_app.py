@@ -3,12 +3,14 @@ from tkinter import messagebox
 import urllib.request
 import json
 from datetime import datetime, timedelta
+import os
 
 # -----------------------------------------------------------------------------
 # 설정 / Configuration
 # -----------------------------------------------------------------------------
-TELEGRAM_BOT_TOKEN = '8749000593:AAGXd0yhHxNeRL8YXzW3VuhEe3QAi2WsJpk'
-TELEGRAM_CHAT_ID = '8687148647'
+# GitHub Actions 환경변수에서 가져오되, 없으면 기본값(테스트용)을 사용합니다.
+TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN', '8749000593:AAGXd0yhHxNeRL8YXzW3VuhEe3QAi2WsJpk')
+TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID', '8687148647')
 
 # 서버에서 가져온 식단 데이터 (크롤링 결과 캐싱)
 MENU_DATA = {
