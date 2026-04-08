@@ -1,6 +1,8 @@
 name: '🍱 학교 식단 자동 배달 로봇'
 
 on:
+  push:
+    branches: [ "main" ]
   schedule:
     # 📝 UTC 기준 (한국 시간 KST = UTC + 9)
     # 아래 설정은 한국 시간 기준 매일 아침 08:30에 실행됩니다.
